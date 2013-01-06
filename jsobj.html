@@ -38,12 +38,10 @@
 		obj.f1();
 		f1();
 		//f0();
-	*/
 		function Person(name,sex){ //构造函数
 			this.name=name;
 			this.sex=sex;
 		}
-	/*
 		Person.prototype.age=18; //为prototype属性对应的prototype对象的属性赋值
 		Person.prototype.print=function(){ //添加方法
 			alert(this.name+"_"+this.sex+"_"+this.age);
@@ -57,7 +55,6 @@
 		Person.prototype.age=20; //改变prototype对象的属性值
 		p1.print();
 		p2.print();
-	*/
 		var o=new Object(); //空对象
 		alert(o.name+"_"+o.sex);
 
@@ -66,6 +63,26 @@
 
 		Person.apply(o,["Rose","female"]); //apply方法作用同call，不同之处在于传递参数的形式是用数组来传递	
 		alert(o.name+"_"+o.sex);
+	*/
+		function Circle(radius){ //定义父类Circle
+			this.radius=radius;
+		}
+		Circle.prototype.area=function(){ //定义父类的方法area计算面积
+			return this.radius*this.radius*3.14;
+		}
+		function PositionCircle(x,y,radius){ //定义类PositionCircle
+			this.x=x;
+			this.y=y;
+			Circle.call(this,radius); //调用父类方法，相当于调用this.Circle(radius),设置PositionCircle类的radius属性
+		}
+		PositionCircle.prototype=new Circle(); //设置PositionCircle的父类为Circle类
+		var pc=new PositionCircle(1,2,1);
+		alert(pc.area());
+		alert(pc.radius);
+		alert(pc.constructor);
+
+		PositionCircle.prototype.constructor=PositionCircle;
+		alert(pc.constructor);
 	</script>
 </head>
 <body>
