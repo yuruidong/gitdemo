@@ -17,10 +17,15 @@
 			namestring+=name[props];	
 		}
 		alert(namestring);
+		namestring="";
+		delete name.name1;
+		delete name["name3"];
 		for(var i=0;i<name.length;i++){
 			namestring+=name["name"+(i+1)];
 		}
-		alert(namestring);
+		alert("name1" in name);
+		alert("name2" in name);
+
 	</script>
 </head>
 <body>
