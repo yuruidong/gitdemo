@@ -63,7 +63,7 @@
 
 		Person.apply(o,["Rose","female"]); //apply方法作用同call，不同之处在于传递参数的形式是用数组来传递	
 		alert(o.name+"_"+o.sex);
-	*/
+	
 		function Circle(radius){ //定义父类Circle
 			this.radius=radius;
 		}
@@ -83,6 +83,22 @@
 
 		PositionCircle.prototype.constructor=PositionCircle;
 		alert(pc.constructor);
+	*/
+		function Person(name,age){
+			this.getName=function(){return name;};
+			this.setName=function(newName){name=newName;};
+			this.getAge=function(){return age;};
+			this.setAge=function(newAge){age=newAge;};
+		}
+		var p1=new Person("Tom",20);
+		alert("p1.getName的值为"+p1.getName());
+		alert("p1.name的值为"+p1.name); //undefined 因为Person类没有name属性
+		p1.name="Rose"; //给p1添加name 属性
+		alert("p1.name=\"Rose\"之后p1.getName的值为"+p1.getName());
+		alert("p1.name=\"Rose\"之后p1.name的值为"+p1.name);
+		p1.setName("Jack"); //改变私有的name属性
+		alert("p1.setName(\"Jack\")之后p1.getname的值为"+p1.getName());
+		alert("p1.setName(\"Jack\")之后p1.name的值为"+p1.name);
 	</script>
 </head>
 <body>
