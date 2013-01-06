@@ -30,6 +30,14 @@
 		alert(date.constructor);
 		alert(date.constructor=="Date");
 		alert(date.constructor==Date);
+		var obj={f0:function(){alert("f0")}};
+		function f1(){alert("f1");}
+		obj.f1=f1; //为对象添加方法
+
+		obj.f0();
+		obj.f1();
+		f1();
+		f0();
 	</script>
 </head>
 <body>
