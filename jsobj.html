@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>javascript oo</title>
 	<script type="text/javascript">
-		var person={};
+	    /*	var person={};
 		person.name="Tom";
 		person['age']=18;								
 		alert(person.name+'_'+person.age);
@@ -37,7 +37,25 @@
 		obj.f0();
 		obj.f1();
 		f1();
-		f0();
+		//f0();
+		*/
+		function Person(name,sex){ //构造函数
+			this.name=name;
+			this.sex=sex;
+		}
+		Person.prototype.age=18; //为prototype属性对应的prototype对象的属性赋值
+		Person.prototype.print=function(){ //添加方法
+			alert(this.name+"_"+this.sex+"_"+this.age);
+		};
+
+		var p1=new Person("name1","male");
+		var p2=new Person("name2","female");
+		p1.print();
+		p2.print();
+
+		Person.prototype.age=20; //改变prototype对象的属性值
+		p1.print();
+		p2.print();
 	</script>
 </head>
 <body>
