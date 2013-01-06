@@ -43,6 +43,7 @@
 			this.name=name;
 			this.sex=sex;
 		}
+	/*
 		Person.prototype.age=18; //为prototype属性对应的prototype对象的属性赋值
 		Person.prototype.print=function(){ //添加方法
 			alert(this.name+"_"+this.sex+"_"+this.age);
@@ -56,6 +57,15 @@
 		Person.prototype.age=20; //改变prototype对象的属性值
 		p1.print();
 		p2.print();
+	*/
+		var o=new Object(); //空对象
+		alert(o.name+"_"+o.sex);
+
+		Person.call(o,"Tom","male"); //相当于o.Person("Tom","male")
+		alert(o.name+"_"+o.sex);
+
+		Person.apply(o,["Rose","female"]); //apply方法作用同call，不同之处在于传递参数的形式是用数组来传递	
+		alert(o.name+"_"+o.sex);
 	</script>
 </head>
 <body>
