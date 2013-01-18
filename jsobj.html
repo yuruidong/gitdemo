@@ -84,7 +84,7 @@
 		PositionCircle.prototype.constructor=PositionCircle;
 		alert(pc.constructor);
 	*/
-		function Person(name,age){
+	/*	function Person(name,age){
 			this.getName=function(){return name;};
 			this.setName=function(newName){name=newName;};
 			this.getAge=function(){return age;};
@@ -99,6 +99,19 @@
 		p1.setName("Jack"); //改变私有的name属性
 		alert("p1.setName(\"Jack\")之后p1.getname的值为"+p1.getName());
 		alert("p1.setName(\"Jack\")之后p1.name的值为"+p1.name);
+		*/
+		var datamodel={
+		table:[],
+		tree:{}
+		};
+		(function(dm){
+		for(var i=0;i<dm.table.rows;i++){
+		var row=dm.table.rows[i];
+		for(var j=0;j<row.cells;i++){
+		drawCell(i,j);
+		}
+		}
+		})(datamodel);
 	</script>
 </head>
 <body>
